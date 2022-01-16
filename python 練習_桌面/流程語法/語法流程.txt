@@ -1,0 +1,27 @@
+for comprehension 介紹:
+
+主要用來快速取list，set，tuple中的資料至另一個list中
+example:
+
+a = [1, 3, 5, 7, 9]
+ 
+print(a)                #[1,3,5,7,9]
+print([2*i for i in a]) #[2,6,10,14,18]，將 a list中的資料以新的狀態顯示出來，將所有的值*2(用for撈出)
+
+--------------------
+進階用法:
+example:
+
+a = [1, 3, 5, 7, 9]
+ 
+print(a)
+print([2*i for i in a if i < 9]) #[2,6,10,14]，在最右方加入一個if判斷，成立時才執行。
+
+example:
+
+z = [x+y for x in 'abcd' if x!='b'
+         for y in '12345' if y!='4' ] #多個for做判斷(可取字串資料)
+
+print(z) #['a1', 'a2', 'a3', 'a5', 'c1', 'c2', 'c3', 'c5', 'd1', 'd2', 'd3', 'd5']
+
+

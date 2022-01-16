@@ -1,0 +1,52 @@
+類別:
+
+__xxx: ''  #此為私有類別
+
+
+@property 定義外部屬性 (可用來做getter或setter)
+
+example:
+
+    @property
+     def balance(self):
+         return self.__balance
+
+
+綁定方法: 將方法綁到特定的帳號中(acc1為例)
+
+example:
+
+   deposit = acc1.deposit      #類別裡的方法被acc1所綁住
+   print(deposit)              #印出綁定資訊
+
+   deposit(100)                #存入100元
+
+   print(acc1)
+
+
+@staticmethod   #當不希望被拿來做綁定方法時使用(加在方法上面)
+
+屬性名稱查詢方法:(acc1為例)
+
+print(acc1.__dict__)
+or
+print(vars(acc1))
+
+
+__new__()用法: 用來辨識帳號新增時，是否已經有相同的名稱(number為例)
+
+__number = {}
+
+    def __new__(cls, name,number,balance):     #與__init__()有相同的變數
+        if number not in cls.__number:
+            newnunber = object.__new__(cls)
+            cls.__number[number] = newnunber
+            return newnunber
+        else:
+            print("號碼: {} 以經存在".format(number))
+
+--------main-----------
+
+acc1 = test_python.Account("jack",123,1000)  #中間號碼(number)不可重複
+print(acc1.__str__())
+

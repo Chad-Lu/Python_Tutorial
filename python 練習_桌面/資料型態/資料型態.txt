@@ -1,0 +1,88 @@
+資料型態:
+
+int(x, base=10) #後方為近制，預設為10近制
+
+
+複數型態:
+
+a = complex(2,4) #
+
+a  #(2+4j)
+a.real # 2.0
+a.imag # 4.0
+a.conjugate() #(2-4j) 共軛
+
+a = 2+4j
+b = 3-5j
+
+print(a*b)  # => 6-10j+12j-20j**2   (j的平方等於-1)
+
+abs(值)  #取後方虛數值
+----------------------------------
+群集型態:(list 清單 [])(set 集合)(dict 字典)(tuple ())
+
+list:
+s = [2,3,4,5]
+h = []
+print(h)   #空清單
+h.append(3) #加入3
+print(h)
+h.extend(s) #加入另一個list
+print(h)
+h.remove(3) #第一個3被移除(前面優先)  
+print(h)
+print(h.index(3))  #顯示list中的數字3之索引位置 
+還有很多方法
+
+set:(保證內容不重複)
+建立空集合必須使用 set()
+example: h = set()
+***可放入list
+
+直接存值
+h = {"dfs",563,2.336}
+print(type(h),h)
+
+***不可以存list
+還有很多方法
+
+dict:(使用key值來尋找內容)(key值不能重複)
+可使用dict()來建立空字典
+example: h = dict()
+
+直接存值
+h = {'key1':"這是1",'key2':"這是2",'key3':3,'key4':4.0}
+print(h['key2'])  #印出key2的值
+print(h.get('key5')) #印出key5的值(顯示None，因為沒有)
+print(h.items()) #印出所有對應值
+print(h.keys())  #印出所有key值
+print(h.values()) #印出所有values值
+print(type(h),h)  
+
+Tuple:(建立後不能變動)
+建立tuple:
+example:  h = (10,) #後方加,
+
+拆解(unpack)
+example:
+h = (10,"十",'ten',10.0)
+i,j,k,w = h  #依序對應
+print(i)
+print(j)
+print(k)
+print(w)
+print(type(h),h)
+
+--------------------------------------
+以下範例顯示兩個list指向同一個記憶體位子，不管s或x的list做更改都會影響彼此，因為兩者一樣
+s = [2,3,4,5]
+x = s
+print(x)
+s[0] = 20
+print(x)
+print(id(x),id(s))  #id()顯示物件記憶體位子
+
+
+
+
+

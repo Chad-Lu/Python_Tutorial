@@ -1,0 +1,20 @@
+類別使用:
+
+如果使用內部類別的話，需要寫在呼叫方法前
+example:
+class mmm_m():
+
+ def jkl(self):
+    print("test jkl.")
+
+b =mmm_m()
+
+print(b.jkl())
+
+
+sys路徑增加
+使用sys.path.append(路徑)
+
+完成後即可import
+
+sys.path #路徑所有內容

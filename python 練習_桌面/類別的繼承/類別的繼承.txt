@@ -1,0 +1,19 @@
+繼承:
+
+如何呼叫父類別?
+super(名稱,self).方法名稱
+
+super(magician,self).fight()
+
+
+多重繼承:
+順序由"左而右"找  ex:(a,b,c) 先a在b,c
+
+尋找類別優先順序:
+
+print(類別.mro())
+
+print(c.mro()) 
+print(c.__mro__) --> 因出全部
+
+print(c.__bases__) -->只印出父類別
